@@ -195,12 +195,80 @@ def part2(): # Function for all logic of the first part of the first chapter of 
     answer = str(input("(Press enter to continue)"))
     makesave(x) 
 def part3():
+    global chapter #sets many variables to be global, rather than locked to this function
+    global part
+    global name 
+    global health
+    global maxhealth
+    global money
+    global strength
+    global defense
+    global wisdom
+    global speed
+    Scripts.screenclear()
+    print("*As you register the hand that grabbed you, you can feel your heart racing uncontrollably")
+    print("*However, you need to swallow your fear to face whatever creature awaits you...")
+    activeinput = 1
+    while activeinput == 1:
+        print("1) Slowly turn your head")
+        print("2) Ask the creature what it is without turning")
+        print("3) (WIS) Analyze the hand")
+        print("(required WIS: 6. Your WIS: ", wisdom, ")")
+        answer = str(input("Make your choice"))
+        if answer == str("1"):
+            print("")
+            print("----------")
+            print("*Despite it all, your resolve remains firm")
+            print("*Despite the fear in your heart, you turn your head to face whatever awaits you.")
+            print("----------")
+            print("")
+            activeinput == 0
+            pass
+        elif answer == str("2"):
+            print("")
+            print("----------")
+            print("*You slowly open your mouth, you can feel your lips quivering as you speak")
+            print(name + ": Who or what are you?")
+            print("*The creature stays silent for a moment, before you slowly hear their lips part")
+            print("???: Bit of an odd question, don't you think?")
+            print("???: I'm human, as I suspect you are, no?")
+            print("*You aren't quite sure if you are human, or what you are. But the fact the individual claims some similarities to you puts you at ease")
+            print("*As your guard lowers, you slowly turn your head to face them")
+            print("----------")
+            print("")
+            activeinput == 0
+            pass
+        elif answer == str("3"):
+            result = Scripts.statcheck(6, wisdom)
+            if result == "Pass":
+                print("")
+                print("----------")
+                print("*You take a close look at the hand")
+                print("*While unfamiliar with this world, you can piece together that the hand looks slightly similar to your own")
+                print("*Perhaps this individual is the same species as you, and such potentially friendly")
+                print("*You decide you're likely safe to face them, and so you turn to do so")
+                print("----------")
+                print("")
+                activeinput == 0
+                pass
+            elif result == "Fail":
+                print("")
+                print("----------")
+                print("*You try to look at the hand, but you can't quite make out what it is")
+                print("*Looking any further seems pointless.")
+                print("----------")
+                print("")
+                pass
+    print("")
     pass
+
+
+
 Scripts.screenclear() #the initial game logic that runs at the start
-varlist = Scripts.loadgame()
+varlist = Scripts.loadgame() #Loads variables from a save file to a local varlist
 if varlist[0] == str("No"):
     part1()
 else:
     if varlist[1] == str("2"):
-        varinit()
+        varinit() #Initializes all needed variables
         part2()

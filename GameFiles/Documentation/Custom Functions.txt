@@ -18,4 +18,6 @@ Function used to load variables from a .txt file (save.txt, which henceforth wil
 errorhandle(x)
 Function used to catch and explain errors thrown by the program and any of its subprocesses. When it's called, the caller declares an error code (x) and begins the error handler. The handler will halt the program, clear the terminal, and act as a stop point so the program doesn't overwhelm a user's system. It then displays a short message alongside the error code, calling upon the user to check the documentation and confirm a program exit.
 ----------------------------
-
+----------------------------
+statcheck(x, y)
+Function used to check two stats against each other, with x being the indicated minimum value, and y being the provided value. Should x be greater than y, it returns a fail string. Should y be greater than or equal to x, it returns a pass string.

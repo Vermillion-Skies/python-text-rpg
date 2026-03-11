@@ -60,3 +60,15 @@ def errorhandle(x): #In-house error handler
     print("")
     answer = str(input("Press enter to close the program."))
     quit()
+def statcheck(x, y): #Stat check where X is the minimum stat and Y is the stat to check
+    x = int(x) #Attempts to convert X to an integer
+    y = int(y) #Attempts to convert Y into an integer
+    try: #Loop to check if the stat is at or above minimum needed value
+        if x > y:
+            return("Fail")
+        elif x < y:
+            return("Pass")
+        elif x == y:
+            return("Pass")
+    except Exception as e: #Exception handler just in case
+        errorhandle("SC1")

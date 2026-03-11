@@ -4,9 +4,11 @@ ERROR CODE DOCUMENTATION
 ----------------------------
 "SC" Errors
 ----------------------------
-Functionally, these should literally never occur.
+Miscelaneous errors for smaller functions within Scripts.py
 ----------------------------
 SC0: SC0 is called when screenclear() fails. I have no idea what COULD cause this, but I threw a handler in there just in case. I have never come across this error, and hopefully neither will you.
+
+SC1: SC1 is called when there is some issue with the statcheck(x, y) function. Likely caused by bad code
 ----------------------------
 ----------------------------
 "SS" errors
