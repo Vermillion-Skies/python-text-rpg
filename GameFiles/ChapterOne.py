@@ -13,22 +13,36 @@ def varinit(): #Initializes all variables to make sure they exist
     global wisdom
     global speed
     global varlist
-    chapter, part, name, health, maxhealth, money, strength, defense, wisdom, speed = varlist
+    try:
+        chapter, part, name, health, maxhealth, money, strength, defense, wisdom, speed = varlist
+    except Exception as e:
+        Scripts.errorhandle("C10")
     pass
-def makesave():
+def makesave(x): #Function to prep for saving, as well as advancing to the next chapter
+    part = str(x)
     print("")
-    answer = str(input("Would you like to save the game? (y/n) "))
+    answer = str(input("Would you like to save the game? (y/n) ")) #Asks user to confirm the save
     if answer == str("y"):
-        varlist =[str(chapter), str(part), str(name), str(health), str(maxhealth), str(money), str(strength), str(defense), str(wisdom), str(speed)]
-        Scripts.savegame(varlist)
+        varlist =[str(chapter), str(part), str(name), str(health), str(maxhealth), str(money), str(strength), str(defense), str(wisdom), str(speed)] #Sets varlist to all variables needed for a save
+        Scripts.savegame(varlist) #Calls savegame with the varlist as an argument
         pass
     else:
         pass
+    if part ==str("1"):
+        part1()
+        pass
+    elif part == str("2"):
+        part2()
+        pass
+    elif part == str("3"):
+        part3()
+    else:
+        Scripts.errorhandle("C11")
     pass
 def part1(): #Function for the beginning character creation part of the game
-    global chapter
+    global chapter #sets many variables to be global, rather than locked to this function
     global part
-    global name #sets many variables to be global, rather than locked to this function
+    global name 
     global health
     global maxhealth
     global money
@@ -42,20 +56,26 @@ def part1(): #Function for the beginning character creation part of the game
     print("A blank slate, both in past and in future")
     print("However, even a blank slate can be written upon, sculpted anew")
     print("And such a process begins with knowing Yourself")
-    name = str(input("How shall the world know you? (enter your name) "))
+    try:
+        name = str(input("How shall the world know you? (enter your name) "))
+    except Exception as e:
+        Scripts.errorhandle("C12")
     print(name + "...")
     print("A name most uncommon in this world, and yet not an unwelcome one")
     print("Although, I could swear I've heard it before...")
     print("Ah, an unimportant detail")
     print("We shall now see how the world wishes to build you...")
     answer = str(input("(Press enter to roll your stats. It will only be done once.)"))
-    strength = random.randint(1,20)
-    defense = random.randint(1,20)
-    wisdom = random.randint(1,20)
-    speed = random.randint(1,20)
-    maxhealth = random.randint(50,145)
-    money = random.randint(0,300)
-    health = maxhealth
+    try:
+        strength = random.randint(1,20)
+        defense = random.randint(1,20)
+        wisdom = random.randint(1,20)
+        speed = random.randint(1,20)
+        maxhealth = random.randint(50,145)
+        money = random.randint(0,300)
+        health = maxhealth
+    except Exception as e:
+        Scripts.errorhandle("C13")
     print("")
     print("---===STATS ROLLED===---")
     print("HP:", maxhealth)
@@ -84,7 +104,6 @@ def part1(): #Function for the beginning character creation part of the game
     makesave()
     part2()
     pass
-
 def part2(): # Function for all logic of the first part of the first chapter of the game
     global name #sets many variables to be global, rather than locked to this function
     global maxhealth
@@ -106,6 +125,7 @@ def part2(): # Function for all logic of the first part of the first chapter of 
     print(name + ": ...suppose I could look around")
     print("")
     activeinput = 1
+    inputcond1 = 0
     while activeinput == 1:
         print("1) Look left")
         print("2) Look right")
@@ -134,16 +154,28 @@ def part2(): # Function for all logic of the first part of the first chapter of 
             print("*You turn your head back to the ground beneath you, contemplating your next choice.")
             pass
         elif answer == str("3"):
-            print("")
-            print("----------")
-            print("*You turn your head up to the sky, squinting your eyes as the sun shines upon you")
-            print("*As the clouds slowly move to envelop the sun's light, your vision becomes clearer")
-            print("*This moment of quiet contemplation clears your mind, you feel more wise!")
-            wisdom = wisdom + int(1)
-            print("(Wisdom increased to", wisdom, "!)")
-            print("----------")
-            print("")
-            print("*You turn your head back to the ground beneath you, contemplating your next choice.")
+            if inputcond1 == 0:
+                print("")
+                print("----------")
+                print("*You turn your head up to the sky, squinting your eyes as the sun shines upon you")
+                print("*As the clouds slowly move to envelop the sun's light, your vision becomes clearer")
+                print("*This moment of quiet contemplation clears your mind, you feel more wise!")
+                wisdom = wisdom + int(1)
+                inputcond1 = 1
+                print("(Wisdom increased to", wisdom, "!)")
+                print("----------")
+                print("")
+                print("*You turn your head back to the ground beneath you, contemplating your next choice.")
+                pass
+            elif inputcond1 == 1:
+                print("")
+                print("----------")
+                print("*You stare into the clouds oncemore, but it seems rather unproductive")
+                print("----------")
+                print("")
+                pass
+            else:
+                Scripts.errorhandle("C14")
             pass
         elif answer == str("4"):
             activeinput = 0
@@ -153,8 +185,17 @@ def part2(): # Function for all logic of the first part of the first chapter of 
             pass
         pass
     print("")
-
-
+    print("*As you stand up, you notice something ahead of you, something you're shocked you didn't notice before")
+    print("*A small town, seemingly unpopulated and abandoned")
+    print("*Just looking at it sends a chill down your spine as you wonder what could've happened there to leave it entirely void of life")
+    print("*Just staring at it makes your skin feel cold and uncomfortable")
+    print("*Just as the discomfort begins to subside, you suddenly feel something")
+    print("")
+    print("*A hand on your shoulder.")
+    answer = str(input("(Press enter to continue)"))
+    makesave(x) 
+def part3():
+    pass
 Scripts.screenclear() #the initial game logic that runs at the start
 varlist = Scripts.loadgame()
 if varlist[0] == str("No"):

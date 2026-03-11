@@ -28,3 +28,17 @@ SL1 (DEPRECATED): SL1 is called when the "save.txt" file is not present.
 
 SL2 (DEPRECATED): SL2 is called when the "Saves" directory doesn't exist
 ----------------------------
+----------------------------
+"C1" errors
+----------------------------
+Error codes that start with C1 indicate some sort of issue with Chapter 1's code
+----------------------------
+C10: C10 is called when the varinit() function fails to set variables to values associated with the save file. Could be caused by a save file shorter than what's expected. More testing needed
+
+C11: C11 is called when the makesave(x) function is unable to determine what part to jump to after a save. This is almost exclusively caused by the developer failing to add the conditional for the part to call.
+
+C12: C12 is called when there is some sort of exception with the initial name input. Unknown what could cause this, potentially too long of a name or invalid characters.
+
+C13: C13 is called when there is an error in the initial stat randomization. Unknown what could trigger this outside of exceptionally random cases
+
+C14: C14 is called when there is an unexpected value of the inputcond1 variable within part 2's dialogue. Shouldn't ever happen, hasn't ever happened
