@@ -8,4 +8,14 @@ Runs a short loop of empty lines to clear a terminal screen for more content. Wh
 ----------------------------
 ----------------------------
 savegame(x)
-Function used to save the contents of a provided list (x, which henceforth will be simply referred to as "list" or "the list") to a .txt file (save.txt, which henceforth will be simply referred to as "save" or "the file"). When called, it sets the "activeinput" variable to 1, as to serve as a placeholder for the loop while it processes data. It first checks if the "Saves/" folder exists. If this folder doesn't exist, it makes it. Then it will attempt to write to the
+Function used to save the contents of a provided list (x, which henceforth will be simply referred to as "list" or "the list") to a .txt file (save.txt, which henceforth will be simply referred to as "save" or "the file"). When called, it sets the "activeinput" variable to 1, as to serve as a placeholder for the loop while it processes data. It first checks if the "Saves/" folder exists. If this folder doesn't exist, it makes it. Then it will attempt to write the list to the save, with a dedicated handler if this fails. Upon completion or upon error, it will cease and return to the process that called it.
+----------------------------
+----------------------------
+loadgame()
+Function used to load variables from a .txt file (save.txt, which henceforth will simply be referred to as "save" or "the file") and return it as a list. When called, it verifies the existence of the "Saves/" folder, throwing an error if it cannot be called. It then continues to verify if the save file exists, throwing an error if that fails. Once both of these are verified, it attempts to write the contents of the save file to a local list, throwing an error if that causes an exception. If all checks pass and the program can write to the list, it returns the list to the process that called it, before terminating itself.
+----------------------------
+----------------------------
+errorhandle(x)
+Function used to catch and explain errors thrown by the program and any of its subprocesses. When it's called, the caller declares an error code (x) and begins the error handler. The handler will halt the program, clear the terminal, and act as a stop point so the program doesn't overwhelm a user's system. It then displays a short message alongside the error code, calling upon the user to check the documentation and confirm a program exit.
+----------------------------
+

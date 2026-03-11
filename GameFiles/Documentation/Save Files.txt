@@ -1,0 +1,37 @@
+----------------------------
+SAVE FILE DOCUMENTATION
+Described line by line in sections for your convenience
+----------------------------
+----------------------------
+PROGRESS SECTION (lines 1-2)
+----------------------------
+Line 1: Chapter
+    Chapter comes first in the code to enable the launcher to read it first to determine how to call functions for starting the game.
+        0 = Prologue (Shouldn't naturally occur in a save)
+        1 = Chapter 1
+        (so on and so forth)
+Line 2: Part
+    The specific part of the chapter the player was on, allowing for more modular and segmented code, as well as more flexible gameplay
+        1 = Part 1
+        2 = Part 2
+        (so on and so forth)
+----------------------------
+----------------------------
+CHARACTER SECTION (Lines 3-10)
+----------------------------
+Line 3: Name
+    Player assigned character name
+Line 4: Health
+    Player's current health value at the time of saving
+Line 5: Max Health
+    Player's current maximum health value
+Line 6: Money
+    Player's current money
+Line 7: Strength
+    Player's STR stat
+Line 8: Defense
+    Player's DEF stat
+Line 9: Wisdom
+    Player's WIS stat
+Line 10: Speed
+    Player's SPD stat

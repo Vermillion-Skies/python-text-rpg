@@ -1,10 +1,35 @@
 import random #Imports the random library for use in stat calculations and rolls
-import Scripts
-
-
-
-def charactermake(): #Function for the beginning character creation part of the game
+import Scripts #Imports the custom script library
+import os #Imports os for initial checks
+def varinit(): #Initializes all variables to make sure they exist
+    global chapter
+    global part
+    global name
+    global health
+    global maxhealth
+    global money
+    global strength
+    global defense
+    global wisdom
+    global speed
+    global varlist
+    chapter, part, name, health, maxhealth, money, strength, defense, wisdom, speed = varlist
+    pass
+def makesave():
+    print("")
+    answer = str(input("Would you like to save the game? (y/n) "))
+    if answer == str("y"):
+        varlist =[str(chapter), str(part), str(name), str(health), str(maxhealth), str(money), str(strength), str(defense), str(wisdom), str(speed)]
+        Scripts.savegame(varlist)
+        pass
+    else:
+        pass
+    pass
+def part1(): #Function for the beginning character creation part of the game
+    global chapter
+    global part
     global name #sets many variables to be global, rather than locked to this function
+    global health
     global maxhealth
     global money
     global strength
@@ -54,10 +79,13 @@ def charactermake(): #Function for the beginning character creation part of the 
     print("*As you take one final step, you feel your vision go dark as you protect yourself from the beams of light")
     print("")
     answer = str(input("(Press enter to continue)"))
-    part1()
+    part = 2
+    chapter = 1
+    makesave()
+    part2()
     pass
 
-def part1(): # Function for all logic of the first part of the first chapter of the game
+def part2(): # Function for all logic of the first part of the first chapter of the game
     global name #sets many variables to be global, rather than locked to this function
     global maxhealth
     global health
@@ -128,4 +156,13 @@ def part1(): # Function for all logic of the first part of the first chapter of 
 
 
 Scripts.screenclear() #the initial game logic that runs at the start
-charactermake()
+varlist = Scripts.loadgame()
+parttoplay = varlist[1]
+print(varlist)
+print(parttoplay)
+if parttoplay == str("No"):
+    part1()
+else:
+    if parttoplay == str("2"):
+        varinit()
+        part2()

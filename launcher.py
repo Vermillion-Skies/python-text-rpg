@@ -7,7 +7,7 @@ activeinput = 1
 retval = 0 #Sets a zeroed out return value. A value of 1 means the operation passed, a value of 2 means there was an error
 while activeinput == 1:
     if os.path.isdir("GameFiles/"): #Checks for the presence of game files folder
-        if os.path.isfile("GameFiles/Game.py"):
+        if os.path.isfile("GameFiles/Prologue.py"):
             if os.path.isfile("GameFiles/Scripts.py"):
                 if os.path.isfile("GameFiles/ChapterOne.py"):
                     retval = 1
@@ -48,6 +48,7 @@ while activeinput == 1: #Loop to check if the user wishes to load a file
                 try:
                     with open("GameFiles/Saves/save.txt", "r") as f: #Attempts to open the save file in read only mode
                         chapter = f.readline().strip() #Reads the first line of the save file, omitting any newline characters
+                        part = f.readline().strip() #Reads the next line
                         activeinput = 0
                         pass
                 except Exception as e:
@@ -77,7 +78,7 @@ if chapter == 0:
     print("Proceeding with a new game")
     answer = str(input("Press enter to continue"))
     subprocess.run(["python", "GameFiles/Prologue.py"], check=True)
-if chapter == 1:
+if chapter == str("1"):
     print("Continuing from Chapter 1")
     answer = str(input("Press enter to continue"))
     subprocess.run(["python", "GameFiles/ChapterOne.py"], check=True)

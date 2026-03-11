@@ -28,4 +28,4 @@ print("The contract has been signed")
 print("As such, the journey may begin.")
 print("Best of luck, oh wandering soul")
 answer = str(input("(press enter to continue)"))
-subprocess.run(["python", "ChapterOne.py"]) #Loads the chapter 1 python file. This will not work in VSC for some reason, but it does when you just run the file normally. Idk why
+subprocess.run(["python", "GameFiles/ChapterOne.py"]) #Loads the chapter 1 python file. This will not work in VSC for some reason, but it does when you just run the file normally. Idk why

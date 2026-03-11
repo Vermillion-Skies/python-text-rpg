@@ -24,7 +24,7 @@ Error codes that start with SL indicate an issue with the loading process
 ----------------------------
 SL0: SL0 is called when there is an issue loading "save.txt". Potentially caused by file corruption. More testing is needed
 
-SL1: SL1 is called when the "save.txt" file is not present.
+SL1 (DEPRECATED): SL1 is called when the "save.txt" file is not present.
 
-SL2: SL2 is called when the "Saves" directory doesn't exist
+SL2 (DEPRECATED): SL2 is called when the "Saves" directory doesn't exist
 ----------------------------
