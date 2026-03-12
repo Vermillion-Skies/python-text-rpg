@@ -20,6 +20,7 @@ def varinit(): #Initializes all variables to make sure they exist
     pass
 def makesave(x): #Function to prep for saving, as well as advancing to the next chapter
     part = str(x)
+    chapter = 1
     print("")
     answer = str(input("Would you like to save the game? (y/n) ")) #Asks user to confirm the save
     if answer == str("y"):
@@ -39,7 +40,7 @@ def makesave(x): #Function to prep for saving, as well as advancing to the next 
     else:
         Scripts.errorhandle("C11")
     pass
-def part1(): #Function for the beginning character creation part of the game
+def part1(): #Function for the beginning character creation part of the game (referred to as part 1)
     global chapter #sets many variables to be global, rather than locked to this function
     global part
     global name 
@@ -99,12 +100,10 @@ def part1(): #Function for the beginning character creation part of the game
     print("*As you take one final step, you feel your vision go dark as you protect yourself from the beams of light")
     print("")
     answer = str(input("(Press enter to continue)"))
-    part = 2
-    chapter = 1
-    makesave()
+    makesave(2)
     part2()
     pass
-def part2(): # Function for all logic of the first part of the first chapter of the game
+def part2(): # Function for all logic of the second part of the first chapter of the game
     global name #sets many variables to be global, rather than locked to this function
     global maxhealth
     global health
@@ -133,6 +132,7 @@ def part2(): # Function for all logic of the first part of the first chapter of 
         print("4) Stop looking and stand up")
         answer = str(input("Enter selection: "))
         if answer == str("1"):
+            Scripts.screenclear()
             print("")
             print("----------")
             print("*As you look to your left, you see a large pond of sorts.")
@@ -143,6 +143,7 @@ def part2(): # Function for all logic of the first part of the first chapter of 
             print("*You turn your head back to the ground beneath you, contemplating your next choice.")
             pass
         elif answer == str("2"):
+            Scripts.screenclear()
             print("")
             print("----------")
             print("*To your right, you notice a sprawling forest of emerald green trees and bushes")
@@ -155,12 +156,13 @@ def part2(): # Function for all logic of the first part of the first chapter of 
             pass
         elif answer == str("3"):
             if inputcond1 == 0:
+                Scripts.screenclear()
                 print("")
                 print("----------")
                 print("*You turn your head up to the sky, squinting your eyes as the sun shines upon you")
                 print("*As the clouds slowly move to envelop the sun's light, your vision becomes clearer")
                 print("*This moment of quiet contemplation clears your mind, you feel more wise!")
-                wisdom = wisdom + int(1)
+                wisdom = int(wisdom) + int(1)
                 inputcond1 = 1
                 print("(Wisdom increased to", wisdom, "!)")
                 print("----------")
@@ -168,6 +170,7 @@ def part2(): # Function for all logic of the first part of the first chapter of 
                 print("*You turn your head back to the ground beneath you, contemplating your next choice.")
                 pass
             elif inputcond1 == 1:
+                Scripts.screenclear()
                 print("")
                 print("----------")
                 print("*You stare into the clouds oncemore, but it seems rather unproductive")
@@ -184,6 +187,7 @@ def part2(): # Function for all logic of the first part of the first chapter of 
             print("Invalid input, please try again")
             pass
         pass
+    Scripts.screenclear()
     print("")
     print("*As you stand up, you notice something ahead of you, something you're shocked you didn't notice before")
     print("*A small town, seemingly unpopulated and abandoned")
@@ -193,8 +197,8 @@ def part2(): # Function for all logic of the first part of the first chapter of 
     print("")
     print("*A hand on your shoulder.")
     answer = str(input("(Press enter to continue)"))
-    makesave(x) 
-def part3():
+    makesave(3) 
+def part3(): #Function for all logic for part 3
     global chapter #sets many variables to be global, rather than locked to this function
     global part
     global name 
@@ -261,9 +265,6 @@ def part3():
                 pass
     print("")
     pass
-
-
-
 Scripts.screenclear() #the initial game logic that runs at the start
 varlist = Scripts.loadgame() #Loads variables from a save file to a local varlist
 if varlist[0] == str("No"):
@@ -272,3 +273,7 @@ else:
     if varlist[1] == str("2"):
         varinit() #Initializes all needed variables
         part2()
+        pass
+    elif varlist[1] == str("3"):
+        varinit()
+        part3()
