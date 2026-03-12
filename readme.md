@@ -24,6 +24,8 @@ Functions>
 
     writecache: Complete
 
+    sprint: Complete
+
 Documentation>
 
     Documentation will be considered complete once the project is complete, as I update it consistently with any major changes
