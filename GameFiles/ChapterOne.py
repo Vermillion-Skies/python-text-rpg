@@ -266,14 +266,18 @@ def part3(): #Function for all logic for part 3
     print("")
     pass
 Scripts.screenclear() #the initial game logic that runs at the start
-varlist = Scripts.loadgame() #Loads variables from a save file to a local varlist
-if varlist[0] == str("No"):
+toload = Scripts.checkcache(0)
+if toload ==str("y"):
+    varlist = Scripts.loadgame() #Loads variables from a save file to a local varlist
+    if varlist[0] == str("No"):
+        part1()
+    else:
+        if varlist[1] == str("2"):
+            varinit() #Initializes all needed variables
+            part2()
+            pass
+        elif varlist[1] == str("3"):
+            varinit()
+            part3()
+elif toload == str("n"):
     part1()
-else:
-    if varlist[1] == str("2"):
-        varinit() #Initializes all needed variables
-        part2()
-        pass
-    elif varlist[1] == str("3"):
-        varinit()
-        part3()

@@ -23,13 +23,13 @@ def savegame(x): #Function to save a provided list to a file
                 activeinput = 0
                 pass
             except Exception as e: #Exception catcher
-                errorhandle("SS0") #Calls in-house error handler
+                errorhandle("SG0") #Calls in-house error handler
         else:
             try:
                 os.mkdir("GameFiles/Saves/") #Creates the save folder and passes to continue the loop
                 pass
             except Exception as e: #Exception catcher
-                errorhandle("SS1") #Calls in-house error handler
+                errorhandle("SG1") #Calls in-house error handler
 def loadgame(): #Function to load a file and return a list
     if os.path.isdir("GameFiles/Saves/"): #Checks if the saves folder exists
         if os.path.isfile("GameFiles/Saves/save.txt"): #Checks if the save file exists
@@ -39,17 +39,17 @@ def loadgame(): #Function to load a file and return a list
                     return retlist #Returns the list to the process that called it
                     pass
             except Exception as e:
-                errorhandle("SL0") #Calls in-house error handler
+                errorhandle("LG0") #Calls in-house error handler
                 pass
         else:
             retlist = ["No"]
             return retlist
-            #errorhandle("SL1") #Calls in-house error handler
+            #errorhandle("LG1") #Calls in-house error handler
             pass
     else:
         retlist = ["No"]
         return retlist
-        #errorhandle("SL2") #Calls in-house error handler
+        #errorhandle("LG2") #Calls in-house error handler
         pass
     pass
 def errorhandle(x): #In-house error handler
@@ -58,8 +58,7 @@ def errorhandle(x): #In-house error handler
     print("Error code: " + x)
     print("Please consult the error code documentation on github for more information")
     print("")
-    answer = str(input("Press enter to close the program."))
-    quit()
+    answer = str(input("Please close the program"))
 def statcheck(x, y): #Stat check where X is the minimum stat and Y is the stat to check
     x = int(x) #Attempts to convert X to an integer
     y = int(y) #Attempts to convert Y into an integer
@@ -72,3 +71,33 @@ def statcheck(x, y): #Stat check where X is the minimum stat and Y is the stat t
             return("Pass")
     except Exception as e: #Exception handler just in case
         errorhandle("SC1")
+def checkcache(x): #Check line x of the cache
+    try:
+        with open("GameFiles/Saves/cachelocal.txt", "r") as file: #Attempts to load the cache file into a list
+            loadcache = file.read().splitlines()
+            pass
+        pass
+    except Exception as e: #Exception catcher
+        errorhandle("CC0")
+    return str(loadcache[x]) #Returns the first value of the cache
+    pass
+def writecache(x, y): #Write value y to line x of the cache
+    try:
+        with open("GameFiles/Saves/cachelocal.txt", "r") as file: #Attempts to load the cache into a list
+            loadcache = [line.strip() for line in file]
+            pass
+        pass
+    except Exception as e:
+        errorhandle("WC0")
+        pass
+    loadcache[x] = y
+    try:
+        with open("GameFiles/Saves/cachelocal.txt", "w") as file: #Opens and clears the cache
+            pass
+        with open("GameFiles/Saves/cachelocal.txt", "w") as file: #Attempts to write the new cache to the file
+            file.write("\n".join(loadcache))
+            pass
+        pass
+    except Exception as e:
+        errorhandle("WC1")
+        pass

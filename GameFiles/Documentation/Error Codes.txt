@@ -11,24 +11,40 @@ SC0: SC0 is called when screenclear() fails. I have no idea what COULD cause thi
 SC1: SC1 is called when there is some issue with the statcheck(x, y) function. Likely caused by bad code
 ----------------------------
 ----------------------------
-"SS" errors
+"SG" errors
 ----------------------------
-Error codes that start with SS indicate an issue saving progress to a file.
+Error codes that start with SG indicate an issue saving progress to a file.
 ----------------------------
-SS0: SS0 is called when there is an issue writing to a file for saving. Could be caused by a lack of write permissions, unlikely to be caused by file non-existence
+SG0: SG0 is called when there is an issue writing to a file for saving. Could be caused by a lack of write permissions, unlikely to be caused by file non-existence
 
-SS1: SS1 is called when the system is unable to create the "Saves" directory upon failure to detect it. COuld be caused by lack of write permissions, drive failure, or low storage space. More testing is needed.
+SG1: SS1 is called when the system is unable to create the "Saves" directory upon failure to detect it. COuld be caused by lack of write permissions, drive failure, or low storage space. More testing is needed.
 ----------------------------
 ----------------------------
-"SL" errors
+"LG" errors
 ----------------------------
-Error codes that start with SL indicate an issue with the loading process
+Error codes that start with LG indicate an issue with the loading process
 ----------------------------
-SL0: SL0 is called when there is an issue loading "save.txt". Potentially caused by file corruption. More testing is needed
+LG0: LG0 is called when there is an issue loading "save.txt". Potentially caused by file corruption. More testing is needed
 
-SL1 (DEPRECATED): SL1 is called when the "save.txt" file is not present.
+LG1 (DEPRECATED): LG1 is called when the "save.txt" file is not present.
 
-SL2 (DEPRECATED): SL2 is called when the "Saves" directory doesn't exist
+LG2 (DEPRECATED): LG2 is called when the "Saves" directory doesn't exist
+----------------------------
+----------------------------
+"CC" errors
+----------------------------
+Error codes that start with CC indicate an issue checking cachelocal.txt
+----------------------------
+CC0: CC0 is called when there is some failure opening cachelocal. It may not exist, or there may be filesystem issues
+----------------------------
+----------------------------
+"WC" errors
+----------------------------
+Error codes that start with WC indicate an issue writing to cachelocal.txt
+----------------------------
+WC0: WC0 is called when there is a failure during the cache checking process. Nearly identical to error code CC0
+
+WC1: WC1 is called when there is a failure writing to the cache file. Could be a lack of permissions, file nonexistence, or filesystem issues.
 ----------------------------
 ----------------------------
 "C1" errors

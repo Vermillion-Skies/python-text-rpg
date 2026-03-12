@@ -1,6 +1,31 @@
 import os
 import subprocess
-
+def makecache(): #Function to make the cachelocal.txt file
+    activeinput = 1
+    while activeinput == 1:
+        if os.path.isdir("GameFiles/Saves/"): #Checks if the saves folder exists
+            try:
+                with open("GameFiles/Saves/cachelocal.txt", "w") as f: #Opens/makes and clears the file
+                    pass
+                placeholderlist = ["z", "z", "z", "z", "z", "z", "z", "z", "z", "z", "z", "z", "z", "z", "z", "z"]
+                with open("GameFiles/Saves/cachelocal.txt", "w") as file: #Writes placeholder values to the cache
+                    file.write("\n".join(placeholderlist))
+                    pass
+                activeinput = 0
+                pass
+            except Exception as e: #Exception catcher
+                quit()
+        else:
+            try:
+                os.mkdir("GameFiles/Saves/") #Creates the save folder and passes to continue the loop
+                pass
+            except Exception as e: #Exception catcher
+                quit()
+                pass
+            pass
+        pass
+    pass
+makecache()
 print("Welcome to the Python RPG project (working title)")
 print("The game will now check if you have all needed files")
 activeinput = 1
@@ -51,6 +76,16 @@ while activeinput == 1: #Loop to check if the user wishes to load a file
                         part = f.readline().strip() #Reads the next line
                         activeinput = 0
                         pass
+                    try:
+                        with open("GameFiles/Saves/cachelocal.txt", "w") as file:
+                            file.write("y")
+                            pass
+                        activeinput = 0
+                        pass
+                    except Exception as e:
+                        print("An unexpected error has occurred and the program must close")
+                        quit()
+                    pass
                 except Exception as e:
                     print("An error occured loading the save, proceeding with new game")
                     chapter = 0
@@ -69,9 +104,21 @@ while activeinput == 1: #Loop to check if the user wishes to load a file
             activeinput = 0
             pass
         pass
+    elif answer == str("d"): #Hidden option to load internal debug tool
+        print("Loading debug tool")
+        subprocess.run(["python", "GameFiles/debug.py"], check=True)
+        quit()
     else:
-        chapter = 0
-        activeinput = 0
+        try:
+            with open("GameFiles/Saves/cachelocal.txt", "w") as file:
+                file.write("n")
+                pass
+            chapter = 0
+            activeinput = 0
+            pass
+        except Exception as e:
+            print("An unexpected error has occurred and the program must close")
+            quit()
         pass
     pass
 if chapter == 0:

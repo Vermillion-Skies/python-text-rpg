@@ -21,3 +21,11 @@ Function used to catch and explain errors thrown by the program and any of its s
 ----------------------------
 statcheck(x, y)
 Function used to check two stats against each other, with x being the indicated minimum value, and y being the provided value. Should x be greater than y, it returns a fail string. Should y be greater than or equal to x, it returns a pass string.
+----------------------------
+----------------------------
+checkcache(x)
+Function used to load a variable from the local cache. It loads the entire cache file into a list variable, then checks and returns the requested value at location x.
+----------------------------
+----------------------------
+writecache(x, y)
+Function used to write values to the cache. Loads the entire cache into a local list variable, then writes value y to location x. After this happens and passes, it saves the list once more to a file.

@@ -1,0 +1,7 @@
+----------------------------
+LOCAL CACHE DOCUMENTATION
+How /GameFiles/Saves/cachelocal.txt works
+----------------------------
+Line 0: Toload var
+    Variable that determines on chapter start to load a file or not. Created to troubleshoot an issue that arose (referenced in commit dc7b3a9) where if the file at /GameFiles/Saves/save.txt exists, it will attempt to load it, regardless of user input or file contents.
+    Values: y, n
