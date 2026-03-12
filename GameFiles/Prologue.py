@@ -1,7 +1,7 @@
 import subprocess #Imports the subprocess library to launch the game files
 import os #Imports the OS library to check and load files
 import Scripts #Imports custom script library
-
+#For all intents and purposes, prologue is considered feature complete
 Scripts.screenclear() #the initial game logic that runs at the start
 print("Welcome, adventurer, to the game")
 print("This game is a work of fiction. Any resemblences to any person, living or dead, is completely coincidental")
