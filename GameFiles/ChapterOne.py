@@ -226,7 +226,7 @@ def part3(): #Function for all logic for part 3
             print("*Despite the fear in your heart, you turn your head to face whatever awaits you.")
             print("----------")
             print("")
-            activeinput == 0
+            activeinput = 0
             pass
         elif answer == str("2"):
             print("")
@@ -240,7 +240,7 @@ def part3(): #Function for all logic for part 3
             print("*As your guard lowers, you slowly turn your head to face them")
             print("----------")
             print("")
-            activeinput == 0
+            activeinput = 0
             pass
         elif answer == str("3"):
             result = Scripts.statcheck(6, wisdom)
@@ -253,7 +253,7 @@ def part3(): #Function for all logic for part 3
                 print("*You decide you're likely safe to face them, and so you turn to do so")
                 print("----------")
                 print("")
-                activeinput == 0
+                activeinput = 0
                 pass
             elif result == "Fail":
                 print("")

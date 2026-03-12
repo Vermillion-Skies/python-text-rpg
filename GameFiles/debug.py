@@ -1,5 +1,5 @@
 import Scripts
-#Internal debugging tool
+#Internal debugging tool, commenting will be minimum as all functions are explained in source code and docs
 Scripts.screenclear()
 print("----------")
 print("Wayward Soul internal debug tool")
