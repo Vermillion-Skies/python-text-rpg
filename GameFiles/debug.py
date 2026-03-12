@@ -12,6 +12,7 @@ while activeinput == 1:
     print("4) statcheck")
     print("5) checkcache")
     print("6) writecache")
+    print("7) sprint")
     print("Q) quit")
     answer = str(input("Choice: "))
     if answer == str("1"):
@@ -43,11 +44,18 @@ while activeinput == 1:
     elif answer == str("5"):
         x = int(input("Please input the cache value to check (integer): "))
         print(Scripts.checkcache(x))
+        pass
     elif answer == str("6"):
         x = int(input("Please input the line to write to (integer): "))
         y = str(input("Please input the value to plant at this location: "))
         Scripts.writecache(x, y)
         print("Please check the cache file or run debug function 5 to verify success")
+        pass
+    elif answer == str("7"):
+        x = str(input("Please type a string to to test "))
+        Scripts.sprint(x)
+        Scripts.sprint("sprint run successfully")
+        pass
     elif answer == str("q"):
         quit()
     else:
