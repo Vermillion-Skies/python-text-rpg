@@ -218,13 +218,14 @@ def part3(): #Function for all logic for part 3
     global speed
     Scripts.screenclear()
     Scripts.sprint("*As you register the hand that grabbed you, you can feel your heart racing uncontrollably")
-    Scripts.sprint("*However, you need to swallow your fear to face whatever creature awaits you...")
+    Scripts.sprint("*However, you need to swallow your fear and make a decision before it's too late...")
     activeinput = 1
-    while activeinput == 1:
+    while activeinput == 1: #Choice loop 3-1
+        print("")
         print("1) Slowly turn your head")
         print("2) Ask the creature what it is without turning")
         print("3) (WIS) Analyze the hand")
-        print("(required WIS: 6. Your WIS: ", wisdom, ")")
+        print("(required WIS: 6. Your WIS: " + str(wisdom) + ")")
         answer = str(input("Make your choice"))
         if answer == str("1"):
             print("")
@@ -271,6 +272,41 @@ def part3(): #Function for all logic for part 3
                 print("")
                 pass
     print("")
+    Scripts.sprint("*As you turn your head to face them, you are greeted by an unassuming looking person")
+    Scripts.sprint("*Upon quick examination, there seems to be no danger")
+    Scripts.sprint("???: My, sorry to have spooked you, stranger!")
+    Scripts.sprint("*They're smiling, looking at you like a long lost friend")
+    Scripts.sprint("*You feel a sort of familiarity you can't quite put your finger on...")
+    Scripts.sprint("???: What're you doing all the way out here, stranger?")
+    Scripts.sprint("???: Nobody's roamed these plains in quite some time.")
+    activeinput = 1
+    while activeinput == 1:
+        print("")
+        print("1) Answer honestly")
+        print("2) Lie")
+        print("3) Stay silent")
+        answer = str(input("(Make your choice)"))
+        if answer == str("1"):
+            print("")
+            print("----------")
+            Scripts.sprint(name + ":I woke up here after a voice told me something about a path?")
+            Scripts.sprint("*Even you think you sound crazy saying this.")
+            Scripts.sprint("*The stranger looks at you with concern")
+            Scripts.sprint("???: Did you hit your head or something, pal?")
+            Scripts.sprint("*He clearly doesn't believe you. Not unexpected.")
+            Scripts.sprint("???: Well, no matter!")
+            Scripts.sprint("*The individual's expression changes almost instantly.")
+            activeinput = 0
+            pass
+        elif answer == str("2"):
+            pass
+        elif answer == str("3"):
+            pass
+        else:
+            print("Invalid input, please try again")
+            pass
+        pass
+    Scripts.sprint("???: The land of (PLACEHOLDER LMFAO) welcomes all!")
     pass
 Scripts.screenclear() #the initial game logic that runs at the start
 toload = Scripts.checkcache(0)
