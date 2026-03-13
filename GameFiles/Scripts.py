@@ -107,6 +107,12 @@ def sprint(x): #Special print function to print each character one at a time
     for c in x:
         sys.stdout.write(c)
         sys.stdout.flush() #Forces immediate output
-        time.sleep(0.05) #Small delay before typing next character
+        if c == str(".") or c == str(",") or c == str("?") or c == str("!") or c == str(":"):
+            time.sleep(0.15)
+            pass
+        else:
+            time.sleep(0.05) #Small delay before typing next character
+            pass
+
     time.sleep(0.5) #Delay between next text line
     print() #Prints a newline character
