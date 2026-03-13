@@ -173,7 +173,7 @@ def part2(): # Function for all logic of the second part of the first chapter of
                 Scripts.sprint("*This moment of quiet contemplation clears your mind, you feel more wise!")
                 wisdom = int(wisdom) + int(1)
                 inputcond1 = 1
-                print("(Wisdom increased to", wisdom, "!)")
+                print("(Wisdom increased to " + wisdom + " !)")
                 print("----------")
                 print("")
                 Scripts.sprint("*You turn your head back to the ground beneath you, contemplating your next choice.")
@@ -217,7 +217,7 @@ def part3(): #Function for all logic for part 3
     global wisdom
     global speed
     Scripts.screenclear()
-    Scripts.sprint("*As you register the hand that grabbed you, you can feel your heart racing uncontrollably")
+    Scripts.sprint("*As you register the hand that grabbed you, you can feel your heart racing uncontrollably.")
     Scripts.sprint("*However, you need to swallow your fear and make a decision before it's too late...")
     activeinput = 1
     while activeinput == 1: #Choice loop 3-1
@@ -230,7 +230,7 @@ def part3(): #Function for all logic for part 3
         if answer == str("1"):
             print("")
             print("----------")
-            Scripts.sprint("*Despite it all, your resolve remains firm")
+            Scripts.sprint("*Despite it all, your resolve remains firm.")
             Scripts.sprint("*Despite the fear in your heart, you turn your head to face whatever awaits you.")
             print("----------")
             print("")
@@ -239,13 +239,13 @@ def part3(): #Function for all logic for part 3
         elif answer == str("2"):
             print("")
             print("----------")
-            Scripts.sprint("*You slowly open your mouth, you can feel your lips quivering as you speak")
+            Scripts.sprint("*You slowly open your mouth, you can feel your lips quivering as you speak.")
             Scripts.sprint(name + ": Who or what are you?")
-            Scripts.sprint("*The creature stays silent for a moment, before you slowly hear their lips part")
+            Scripts.sprint("*The creature stays silent for a moment, before you slowly hear their lips part.")
             Scripts.sprint("???: Bit of an odd question, don't you think?")
             Scripts.sprint("???: I'm human, as I suspect you are, no?")
-            Scripts.sprint("*You aren't quite sure if you are human, or what you are. But the fact the individual claims some similarities to you puts you at ease")
-            Scripts.sprint("*As your guard lowers, you slowly turn your head to face them")
+            Scripts.sprint("*You aren't quite sure if you are human, or what you are. But the fact the individual claims some similarities to you puts you at ease.")
+            Scripts.sprint("*As your guard lowers, you slowly turn your head to face them.")
             print("----------")
             print("")
             activeinput = 0
@@ -255,10 +255,10 @@ def part3(): #Function for all logic for part 3
             if result == "Pass":
                 print("")
                 print("----------")
-                Scripts.sprint("*You take a close look at the hand")
-                Scripts.sprint("*While unfamiliar with this world, you can piece together that the hand looks slightly similar to your own")
-                Scripts.sprint("*Perhaps this individual is the same species as you, and such potentially friendly")
-                Scripts.sprint("*You decide you're likely safe to face them, and so you turn to do so")
+                Scripts.sprint("*You take a close look at the hand.")
+                Scripts.sprint("*While unfamiliar with this world, you can piece together that the hand looks slightly similar to your own.")
+                Scripts.sprint("*Perhaps this individual is the same species as you, and such potentially friendly.")
+                Scripts.sprint("*You decide you're likely safe to face them, and so you turn to do so.")
                 print("----------")
                 print("")
                 activeinput = 0
@@ -266,16 +266,16 @@ def part3(): #Function for all logic for part 3
             elif result == "Fail":
                 print("")
                 print("----------")
-                Scripts.sprint("*You try to look at the hand, but you can't quite make out what it is")
+                Scripts.sprint("*You try to look at the hand, but you can't quite make out what it is.")
                 Scripts.sprint("*Looking any further seems pointless.")
                 print("----------")
                 print("")
                 pass
     print("")
-    Scripts.sprint("*As you turn your head to face them, you are greeted by an unassuming looking person")
-    Scripts.sprint("*Upon quick examination, there seems to be no danger")
+    Scripts.sprint("*As you turn your head to face them, you are greeted by an unassuming looking person.")
+    Scripts.sprint("*Upon quick examination, there seems to be no danger.")
     Scripts.sprint("???: My, sorry to have spooked you, stranger!")
-    Scripts.sprint("*They're smiling, looking at you like a long lost friend")
+    Scripts.sprint("*They're smiling, looking at you like a long lost friend.")
     Scripts.sprint("*You feel a sort of familiarity you can't quite put your finger on...")
     Scripts.sprint("???: What're you doing all the way out here, stranger?")
     Scripts.sprint("???: Nobody's roamed these plains in quite some time.")
@@ -291,7 +291,7 @@ def part3(): #Function for all logic for part 3
             print("----------")
             Scripts.sprint(name + ": I woke up here after a voice told me something about a path?")
             Scripts.sprint("*Even you think you sound crazy saying this.")
-            Scripts.sprint("*The stranger looks at you with concern")
+            Scripts.sprint("*The stranger looks at you with concern.")
             Scripts.sprint("???: Did you hit your head or something, pal?")
             Scripts.sprint("*They clearly don't believe you. Not unexpected.")
             Scripts.sprint("???: Well, no matter!")
@@ -301,26 +301,26 @@ def part3(): #Function for all logic for part 3
         elif answer == str("2"):
             print("")
             print("----------")
-            Scripts.sprint(name + ": I'm uh... a traveller from a far off land")
-            Scripts.sprint("*You don't even sound convinced of yourself")
+            Scripts.sprint(name + ": I'm uh... a traveller from a far off land.")
+            Scripts.sprint("*You don't even sound convinced of yourself.")
             Scripts.sprint("???: A traveller, huh? Well, that's wonderful!")
-            Scripts.sprint("*Somehow the stranger entirely buys the lie")
+            Scripts.sprint("*Somehow the stranger entirely buys the lie.")
             Scripts.sprint("???: After all...")
             activeinput = 0
             pass
         elif answer == str("3"):
             print("")
             print("----------")
-            Scripts.sprint("*You remain silent, not answering their question")
-            Scripts.sprint("*They look... almost saddened by this")
+            Scripts.sprint("*You remain silent, not answering their question.")
+            Scripts.sprint("*They look... almost saddened by this.")
             Scripts.sprint("???: Not much of a talker, huh?")
-            Scripts.sprint("*Then suddenly, they perk up once more")
+            Scripts.sprint("*Then suddenly, they perk up once more.")
             Scripts.sprint("???: No matter! I'm not going to make you talk if you don't want to!")
-            Scripts.sprint("*They put their hand gently on your shoulder")
-            Scripts.sprint("*It feels warm, comforting even")
+            Scripts.sprint("*They put their hand gently on your shoulder.")
+            Scripts.sprint("*It feels warm, comforting even.")
             maxhealth = int(maxhealth) + 10
             health = maxhealth
-            Scripts.sprint("(Max health increased to" + str(maxhealth) +"!)")
+            Scripts.sprint("(Max health increased to " + str(maxhealth) +" !)")
             Scripts.sprint("???: I don't need to know anything about you to know...")
             activeinput = 0
             pass
@@ -329,22 +329,22 @@ def part3(): #Function for all logic for part 3
             pass
         pass
     Scripts.sprint("???: No matter what led you here...")
-    Scripts.sprint("*They somehow smile wider. It's almost eerie")
+    Scripts.sprint("*They somehow smile wider. It's almost eerie.")
     Scripts.sprint("???: The home of Gen welcomes all!")
     Scripts.sprint(name + ": ...house of Gen?")
-    Scripts.sprint("*They look at you confused before breaking into light laughter")
+    Scripts.sprint("*They look at you confused before breaking into light laughter.")
     Scripts.sprint("???: How silly of me, I never told you that was my name!")
     Scripts.sprint("Gen: Name's Gen, nice to meet you...")
     Scripts.sprint("Gen: What was your name again?")
-    Scripts.sprint("*Might as well tell them your name, no harm in that")
+    Scripts.sprint("*Might as well tell them your name, no harm in that.")
     Scripts.sprint(name + ": ..." + name)
     Scripts.sprint("Gen: Well then, " + name + ", you look absolutely beat. How about you come stay at my place in Viper Village for a bit?")
     Scripts.sprint(name + ": Viper Village?")
     Scripts.sprint("Gen: Yeah, the town over there, I'm sure you saw it right?")
-    Scripts.sprint("*Gen points at the seemingly abandoned town at the edge of the field")
-    Scripts.sprint("*It should be safe to stay there if you're with someone")
-    Scripts.sprint("*Not that there seems to be another option")
-    Scripts.sprint("*With a slightly hesitant nod, you get up, with help from Gen, and make your way to Viper Village")
+    Scripts.sprint("*Gen points at the seemingly abandoned town at the edge of the field.")
+    Scripts.sprint("*It should be safe to stay there if you're with someone.")
+    Scripts.sprint("*Not that there seems to be another option.")
+    Scripts.sprint("*With a slightly hesitant nod, you get up, with help from Gen, and make your way to Viper Village.")
     answer = str(input("(Press enter to continue)"))
     makesave(4)
     pass
