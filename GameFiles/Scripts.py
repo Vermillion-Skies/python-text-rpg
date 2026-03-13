@@ -116,3 +116,19 @@ def sprint(x): #Special print function to print each character one at a time
 
     time.sleep(0.5) #Delay between next text line
     print() #Prints a newline character
+    pass
+def gameover(): #Text that will display upon a game over
+    screenclear()
+    sprint("THE VOICE: So it seems you couldn't follow the path until the end...")
+    sprint("THE VOICE: Such a pity, we had so much faith in you.")
+    sprint("THE VOICE: Seems it was purely unfounded.")
+    sprint("THE VOICE: Return then, to the Plane Of Souls.")
+    sprint("THE VOICE: Forevermore.")
+    print("")
+    sprint("You have died.")
+    sprint("You can reload your save upon restarting the game.")
+    sprint("Don't keep us waiting.")
+    unkill = 10
+    while unkill == 10: #Literally just an unkillable loop to force a restart of the game
+        time.sleep(1)
+    pass
