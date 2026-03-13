@@ -125,15 +125,15 @@ def part2(): # Function for all logic of the second part of the first chapter of
     global wisdom
     global speed
     Scripts.screenclear()
-    Scripts.sprint("*When you finally come to, you slowly open your eyes")
-    Scripts.sprint("*You did not have eyes before, you don't believe you ever have")
-    Scripts.sprint("*Your eyes slowly adjust to the light, and you become aware of your surroundings")
-    Scripts.sprint("*You seem to be under a tree, leaning against it as your legs are crossed, and gently placed on top of the ground beneath you")
-    Scripts.sprint("*You aren't quite used to your body yet, and you find getting up to be a challenge for the moment. However, you managed to understand speech within this vessel quite fast")
+    Scripts.sprint("*When you finally come to, you slowly open your eyes.")
+    Scripts.sprint("*You did not have eyes before, you don't believe you ever have.")
+    Scripts.sprint("*Your eyes slowly adjust to the light, and you become aware of your surroundings.")
+    Scripts.sprint("*You seem to be under a tree, leaning against it as your legs are crossed, and gently placed on top of the ground beneath you.")
+    Scripts.sprint("*You aren't quite used to your body yet, and you find getting up to be a challenge for the moment. However, you managed to understand speech within this vessel quite fast.")
     Scripts.sprint("*You open your mouth to speak, and a voice escapes that you haven't heard before.")
     Scripts.sprint("*It's not unpleasant, although there isn't anyone else around to confirm this.")
-    Scripts.sprint("*You speak softly to yourself, growing more used to this voice")
-    Scripts.sprint(name + ": ...suppose I could look around")
+    Scripts.sprint("*You speak softly to yourself, growing more used to this voice.")
+    Scripts.sprint(name + ": ...suppose I could look around.")
     print("")
     activeinput = 1
     inputcond1 = 0
@@ -156,9 +156,9 @@ def part2(): # Function for all logic of the second part of the first chapter of
         elif answer == str("2"):
             print("")
             print("----------")
-            Scripts.sprint("*To your right, you notice a sprawling forest of emerald green trees and bushes")
-            Scripts.sprint("*You can't quite see into it, but based on the outside it must be full of life")
-            Scripts.sprint("*As you admire it, you notice birds flying off from the trees, moving in a triangular formation")
+            Scripts.sprint("*To your right, you notice a sprawling forest of emerald green trees and bushes.")
+            Scripts.sprint("*You can't quite see into it, but based on the outside it must be full of life.")
+            Scripts.sprint("*As you admire it, you notice birds flying off from the trees, moving in a triangular formation.")
             Scripts.sprint("*And yet... something about it makes you shudder. But why?")
             print("----------")
             print("")
@@ -168,8 +168,8 @@ def part2(): # Function for all logic of the second part of the first chapter of
             if inputcond1 == 0:
                 print("")
                 print("----------")
-                Scripts.sprint("*You turn your head up to the sky, squinting your eyes as the sun shines upon you")
-                Scripts.sprint("*As the clouds slowly move to envelop the sun's light, your vision becomes clearer")
+                Scripts.sprint("*You turn your head up to the sky, squinting your eyes as the sun shines upon you.")
+                Scripts.sprint("*As the clouds slowly move to envelop the sun's light, your vision becomes clearer.")
                 Scripts.sprint("*This moment of quiet contemplation clears your mind, you feel more wise!")
                 wisdom = int(wisdom) + int(1)
                 inputcond1 = 1
@@ -181,7 +181,7 @@ def part2(): # Function for all logic of the second part of the first chapter of
             elif inputcond1 == 1:
                 print("")
                 print("----------")
-                Scripts.sprint("*You stare into the clouds oncemore, but it seems rather unproductive")
+                Scripts.sprint("*You stare into the clouds oncemore, but it seems rather unproductive.")
                 print("----------")
                 print("")
                 pass
@@ -192,15 +192,15 @@ def part2(): # Function for all logic of the second part of the first chapter of
             activeinput = 0
             pass
         else:
-            Scripts.sprint("Invalid input, please try again")
+            Scripts.sprint("Invalid input, please try again.")
             pass
         pass
     print("")
-    Scripts.sprint("*As you stand up, you notice something ahead of you, something you're shocked you didn't notice before")
-    Scripts.sprint("*A small town, seemingly unpopulated and abandoned")
-    Scripts.sprint("*Just looking at it sends a chill down your spine as you wonder what could've happened there to leave it entirely void of life")
-    Scripts.sprint("*Just staring at it makes your skin feel cold and uncomfortable")
-    Scripts.sprint("*Just as the discomfort begins to subside, you suddenly feel something")
+    Scripts.sprint("*As you stand up, you notice something ahead of you, something you're shocked you didn't notice before.")
+    Scripts.sprint("*A small town, seemingly unpopulated and abandoned.")
+    Scripts.sprint("*Just looking at it sends a chill down your spine as you wonder what could've happened there to leave it entirely void of life.")
+    Scripts.sprint("*Just staring at it makes your skin feel cold and uncomfortable.")
+    Scripts.sprint("*Just as the discomfort begins to subside, you suddenly feel something.")
     print("")
     Scripts.sprint("*A hand on your shoulder.")
     answer = str(input("(Press enter to continue)"))
