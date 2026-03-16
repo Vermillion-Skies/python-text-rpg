@@ -28,4 +28,4 @@ Scripts.sprint("The contract has been signed.")
 Scripts.sprint("As such, the journey may begin.")
 Scripts.sprint("Best of luck, oh lost one.")
 answer = str(input("(press enter to continue)"))
-subprocess.run(["python", "GameFiles/ChapterOne.py"]) #Loads the chapter 1 python file. This will not work in VSC for some reason, but it does when you just run the file normally. Idk why
+Scripts.loadchapter(str("1")) #Loads the chapter 1 python file. This will not work in VSC for some reason, but it does when you just run the file normally. Idk why
