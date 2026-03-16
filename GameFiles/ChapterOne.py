@@ -162,45 +162,37 @@ def part2(): # Function for all logic of the second part of the first chapter of
         print("4) Stop looking and stand up")
         answer = str(input("Make your choice "))
         if answer == str("1"):
-            print("")
-            print("----------")
+            Scripts.linebreak()
             Scripts.sprint("*As you look to your left, you see a large pond of sorts.")
             Scripts.sprint("*Many animals are drinking from the pond, and wild flora seem to be growing plentifully around it's crystal blue waters.")
             Scripts.sprint("*You can't quite explain it, but somehow this puts your mind at ease.")
-            print("----------")
             print("")
             Scripts.sprint("*You turn your head back to the ground beneath you, contemplating your next choice.")
             pass
         elif answer == str("2"):
-            print("")
-            print("----------")
+            Scripts.linebreak()
             Scripts.sprint("*To your right, you notice a sprawling forest of emerald green trees and bushes.")
             Scripts.sprint("*You can't quite see into it, but based on the outside it must be full of life.")
             Scripts.sprint("*As you admire it, you notice birds flying off from the trees, moving in a triangular formation.")
             Scripts.sprint("*And yet... something about it makes you shudder. But why?")
-            print("----------")
             print("")
             Scripts.sprint("*You turn your head back to the ground beneath you, contemplating your next choice.")
             pass
         elif answer == str("3"):
             if inputcond1 == 0:
-                print("")
-                print("----------")
+                Scripts.linebreak()
                 Scripts.sprint("*You turn your head up to the sky, squinting your eyes as the sun shines upon you.")
                 Scripts.sprint("*As the clouds slowly move to envelop the sun's light, your vision becomes clearer.")
                 Scripts.sprint("*This moment of quiet contemplation clears your mind, you feel more wise!")
                 wisdom = int(wisdom) + int(1)
                 inputcond1 = 1
                 print("(Wisdom increased to " + wisdom + " !)")
-                print("----------")
                 print("")
                 Scripts.sprint("*You turn your head back to the ground beneath you, contemplating your next choice.")
                 pass
             elif inputcond1 == 1:
-                print("")
-                print("----------")
+                linebreak()
                 Scripts.sprint("*You stare into the clouds oncemore, but it seems rather unproductive.")
-                print("----------")
                 print("")
                 pass
             else:
@@ -246,17 +238,14 @@ def part3(): #Function for all logic for part 3
         print("(required WIS: 6. Your WIS: " + str(wisdom) + ")")
         answer = str(input("Make your choice "))
         if answer == str("1"):
-            print("")
-            print("----------")
+            Scripts.linebreak()
             Scripts.sprint("*Despite it all, your resolve remains firm.")
             Scripts.sprint("*Despite the fear in your heart, you turn your head to face whatever awaits you.")
-            print("----------")
             print("")
             activeinput = 0
             pass
         elif answer == str("2"):
-            print("")
-            print("----------")
+            Scripts.linebreak()
             Scripts.sprint("*You slowly open your mouth, you can feel your lips quivering as you speak.")
             Scripts.sprint(name + ": Who or what are you?")
             Scripts.sprint("*The creature stays silent for a moment, before you slowly hear their lips part.")
@@ -264,29 +253,24 @@ def part3(): #Function for all logic for part 3
             Scripts.sprint("???: I'm human, as I suspect you are, no?")
             Scripts.sprint("*You aren't quite sure if you are human, or what you are. But the fact the individual claims some similarities to you puts you at ease.")
             Scripts.sprint("*As your guard lowers, you slowly turn your head to face them.")
-            print("----------")
             print("")
             activeinput = 0
             pass
         elif answer == str("3"):
             result = Scripts.statcheck(6, wisdom)
             if result == "Pass":
-                print("")
-                print("----------")
+                Scripts.linebreak()
                 Scripts.sprint("*You take a close look at the hand.")
                 Scripts.sprint("*While unfamiliar with this world, you can piece together that the hand looks slightly similar to your own.")
                 Scripts.sprint("*Perhaps this individual is the same species as you, and such potentially friendly.")
                 Scripts.sprint("*You decide you're likely safe to face them, and so you turn to do so.")
-                print("----------")
                 print("")
                 activeinput = 0
                 pass
             elif result == "Fail":
-                print("")
-                print("----------")
+                Scripts.linebreak()
                 Scripts.sprint("*You try to look at the hand, but you can't quite make out what it is.")
                 Scripts.sprint("*Looking any further seems pointless.")
-                print("----------")
                 print("")
                 pass
             pass
@@ -310,8 +294,7 @@ def part3(): #Function for all logic for part 3
         print("3) Stay silent")
         answer = str(input("Make your choice "))
         if answer == str("1"):
-            print("")
-            print("----------")
+            Scripts.linebreak()
             Scripts.sprint(name + ": I woke up here after a voice told me something about a path?")
             Scripts.sprint("*Even you think you sound crazy saying this.")
             Scripts.sprint("*The stranger looks at you with concern.")
@@ -322,8 +305,7 @@ def part3(): #Function for all logic for part 3
             activeinput = 0
             pass
         elif answer == str("2"):
-            print("")
-            print("----------")
+            Scripts.linebreak()
             Scripts.sprint(name + ": I'm uh... a traveller from a far off land.")
             Scripts.sprint("*You don't even sound convinced of yourself.")
             Scripts.sprint("???: A traveller, huh? Well, that's wonderful!")
@@ -332,8 +314,7 @@ def part3(): #Function for all logic for part 3
             activeinput = 0
             pass
         elif answer == str("3"):
-            print("")
-            print("----------")
+            Scripts.linebreak()
             Scripts.sprint("*You remain silent, not answering their question.")
             Scripts.sprint("*They look... almost saddened by this.")
             Scripts.sprint("???: Not much of a talker, huh?")
@@ -395,8 +376,7 @@ def part4():
         print("2) Ask how far until you get to Gen's house")
         answer = str(input("Make your choice "))
         if answer == str("1"):
-            print("")
-            print("----------")
+            Scripts.linebreak()
             Scripts.sprint("*You walk a little faster to catch up to Gen.")
             Scripts.sprint(name + ": What the hell happened here, Gen?")
             Scripts.sprint("*Gen looks shocked you asked.")
@@ -407,8 +387,7 @@ def part4():
             activeinput = 0
             pass
         elif answer == str("2"):
-            print("")
-            print("----------")
+            Scripts.linebreak()
             Scripts.sprint("*You get impatient walking around this ghost town.")
             Scripts.sprint(name + ": How long until we get to the House Of Gen you mentioned?")
             Scripts.sprint("*Gen looks back at you, their smile faltering.")
@@ -451,8 +430,7 @@ def part4():
         if answer == str("1"):
             result = Scripts.statcheck(6, strength)
             if result == str("Pass"):
-                print("")
-                print("----------")
+                Scripts.linebreak()
                 Scripts.sprint("*You dash forward, clenching your fist tight.")
                 Scripts.sprint("*The spider is purely focused on Gen, so you're able to land a solid blow.")
                 Scripts.sprint("*As your fist slams into its head, it squeals out in pain as it bleeds.")
@@ -463,8 +441,7 @@ def part4():
                 activeinput = 0
                 pass
             elif result == str("Fail"):
-                print("")
-                print("----------")
+                Scripts.linebreak()
                 Scripts.sprint("*You run forward to fight, but as you leap in to attack...")
                 Scripts.sprint("*The spider lunges forward, sinking it's large fangs into your arm.")
                 health = int(health) - random.randint(10, 30)
@@ -489,8 +466,7 @@ def part4():
                 pass
             pass
         elif answer == str("2"):
-            print("")
-            print("----------")
+            Scripts.linebreak()
             Scripts.sprint("*You hesitate, but ultimately agree.")
             Scripts.sprint("*You quickly take off, leaving Gen to fight.")
             Scripts.sprint("*You hope they can survive, but you can't worry about that too much.")
@@ -543,8 +519,7 @@ def part4():
         print("4) Allow the silence to stay")
         answer = str(input("Make your choice "))
         if answer == str("1"):
-            print("")
-            print("----------")    
+            Scripts.linebreak()
             Scripts.sprint(name + ": So just what the hell was that thing?")
             Scripts.sprint("Gen: Oh, that was a crawler.")
             Scripts.sprint(name + ": Crawler...?")
@@ -554,8 +529,7 @@ def part4():
             Scripts.sprint("*You count yourself lucky to be alive.")
             pass
         elif answer == str("2"):
-            print("")
-            print("----------")
+            Scripts.linebreak()
             Scripts.sprint("*You look around Gen's house.")
             Scripts.sprint("*It's fairly basic. Small kitchen, a singular window, and...")
             Scripts.sprint("*Two beds...?")
@@ -566,8 +540,7 @@ def part4():
                 print("2) Leave it be")
                 answer2 = str(input("Make your choice "))
                 if answer2 == str("1"):
-                    print("")
-                    print("----------")
+                    Scripts.linebreak()
                     Scripts.sprint(name + ": Hey, Gen?")
                     Scripts.sprint("*Gen turns to face you.")
                     Scripts.sprint(name + ": The beds... You used to live here with someone else, didn't you?")
@@ -578,8 +551,7 @@ def part4():
                     activeinput2 = 0
                     pass
                 elif answer2 == str("2"):
-                    print("")
-                    print("----------")
+                    Scripts.linebreak()
                     Scripts.sprint("*You decide to leave it be, probably a touchy subject")
                     activeinput2 = 0
                     pass
@@ -590,8 +562,7 @@ def part4():
             pass
         elif answer == str("3"):
             if c1p4v1 == str("y"):
-                print("")
-                print("----------")
+                Scripts.linebreak()
                 Scripts.sprint(name + ": So Gen... What the hell happened in this town?")
                 Scripts.sprint("Gen: I figured you'd ask at some point.")
                 Scripts.sprint("*Gen reaches down and grabs two drinks, tossing you one.")
@@ -625,8 +596,7 @@ def part4():
                 pass
             pass
         elif answer == str("4"):
-            print("")
-            print("----------")
+            Scripts.linebreak()
             Scripts.sprint("*You decide to just let the silence remain, until Gen breaks it.")
             activeinput = 0
             pass

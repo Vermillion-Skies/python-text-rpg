@@ -140,3 +140,8 @@ def loadchapter(x): #Loads a defined chapter
     elif x == str("2"):
         subprocess.run(["python", "GameFiles/ChapterTwo.py"])
         pass
+    pass
+def linebreak(): #Literally just a linebreak for choice loops
+    print("")
+    print("----------")
+    pass        

@@ -41,3 +41,7 @@ Function to have a unified game over dialog throughout the game. Calls sprint an
 ----------------------------
 loadchapter(x)
 Function to load a chapter defined by the caller. A simple nested conditional to check input and then load a chapter based on said input
+----------------------------
+----------------------------
+linebreak()
+Function that prints an empty line with some dashes, since I kept using it within dialog
