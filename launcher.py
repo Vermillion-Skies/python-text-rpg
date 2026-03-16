@@ -129,8 +129,11 @@ if chapter == 0:
     print("Proceeding with a new game")
     answer = str(input("Press enter to continue"))
     subprocess.run(["python", "GameFiles/Prologue.py"], check=True)
-if chapter == str("1"):
+elif chapter == str("1"):
     print("Continuing from Chapter 1")
     answer = str(input("Press enter to continue"))
     subprocess.run(["python", "GameFiles/ChapterOne.py"], check=True)
-    
+elif chapter == str("2"):
+    print("Continuing from Chapter 2")
+    answer = str(input("Press enter to continue"))
+    subprocess.run(["python", "GameFiles/ChapterTwo.py"], check=True)
