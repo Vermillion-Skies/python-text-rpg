@@ -711,7 +711,11 @@ if toload ==str("y"):
     if varlist[0] == str("No"):
         part1()
     else:
-        if varlist[1] == str("2"):
+        if varlist[1] == str("1"):
+            varinit()
+            part1()
+            pass
+        elif varlist[1] == str("2"):
             varinit() #Initializes all needed variables
             part2()
             pass
