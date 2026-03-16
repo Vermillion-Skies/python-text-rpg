@@ -146,7 +146,7 @@ def part2(): # Function for all logic of the second part of the first chapter of
         print("2) Look right")
         print("3) Look to the sky")
         print("4) Stop looking and stand up")
-        answer = str(input("Enter selection: "))
+        answer = str(input("Make your choice "))
         if answer == str("1"):
             print("")
             print("----------")
@@ -230,7 +230,7 @@ def part3(): #Function for all logic for part 3
         print("2) Ask the creature what it is without turning")
         print("3) (WIS) Analyze the hand")
         print("(required WIS: 6. Your WIS: " + str(wisdom) + ")")
-        answer = str(input("Make your choice"))
+        answer = str(input("Make your choice "))
         if answer == str("1"):
             print("")
             print("----------")
@@ -294,7 +294,7 @@ def part3(): #Function for all logic for part 3
         print("1) Answer honestly")
         print("2) Lie")
         print("3) Stay silent")
-        answer = str(input("(Make your choice)"))
+        answer = str(input("Make your choice "))
         if answer == str("1"):
             print("")
             print("----------")
@@ -379,7 +379,7 @@ def part4():
         print("")
         print("1) Ask what happened")
         print("2) Ask how far until you get to Gen's house")
-        answer = str(input("Make your choice"))
+        answer = str(input("Make your choice "))
         if answer == str("1"):
             print("")
             print("----------")
@@ -433,7 +433,7 @@ def part4():
         print("1) (STR) Fight")
         print("(STR needed: 6, your STR: " + str(strength) + ")")
         print("2) Run like hell")
-        answer = str(input("Make your choice"))
+        answer = str(input("Make your choice "))
         if answer == str("1"):
             result = Scripts.statcheck(6, strength)
             if result == str("Pass"):
@@ -488,6 +488,8 @@ def part4():
             pass
         pass
     if c1p4v2 == str("1"): # STR check pass
+        sprint("*You slowly open the door to Gen's house and step inside.")
+        sprint("*Gen gestures to a table in the middle of the room, inviting you to sit with them.")
         pass
     elif c1p4v2 == str("2"): # STR check fail
         sprint("*You and Gen stumble through the door, both breathing heavily.")
@@ -496,20 +498,52 @@ def part4():
         sprint(name + ": ...been better.")
         sprint("Gen: Fair, but at least we're alive...")
         sprint("*Gen sighs, sitting down across from you.")
-        sprint("Gen: Sorry about that... mess")
+        sprint("Gen: Sorry about that... mess.")
+        sprint("*You get the feeling this happens a lot here.")
+        pass
     elif c1p4v2 == str("3"): # You ran
         sprint("*You slam your body into the door, opening it with a violent thud before closing it even more violently.")
         sprint("*You collapse against the door, panting rapidly.")
         sprint("*Was it really the right move to abandon Gen...?")
-        sprint("*As you think about this, you hear a knock at the door")
+        sprint("*As you think about this, you hear a knock at the door.")
         sprint("Gen: Hey! " + name + "! I got it!")
         sprint("*You breathe a sigh of relief. Gen survived after all.")
         sprint("*You open the door for them, and they walk in.")
         sprint("*Their knife is stained with spider blood, but they seem unharmed.")
-        sprint("*You both sit down at the table in the center of the room")
+        sprint("*You both sit down at the table in the center of the room.")
+        pass
+    sprint("*You feel now is as good a time as any to talk to them.")
+    if c1p4v1 == str("y"):
+        sprint("*You remember that they offered to talk about the story behind this place.")
         pass
     #Probably a good idea to smooth transfer into the table scene here
     #Start it with dialog choices "What was that", something asking about Gen's home, and then a check for c1p4v1 where they explain what happened to this town
+    activeinput = 1
+    while activeinput == 1:
+        print("1) Ask what that creature was")
+        print("2) Look around Gen's home")
+        if c1p4v1 == str("y"):
+            print("3) Ask about what happened to this town")
+            pass
+        print("4) Allow the silence to stay")
+        answer = str(input("Make your choice "))
+        if answer == str("1"):
+            pass
+        elif answer == str("2"):
+            pass
+        elif answer == str("3"):
+            if c1p4v1 == str("y"):
+                pass
+            else:
+                sprint("Invalid input, try again.")
+                pass
+            pass
+        elif answer == str("4"):
+            pass
+        else:
+            sprint("Invalid input, try again.")
+            pass
+        pass
     pass
 Scripts.screenclear() #the initial game logic that runs at the start
 toload = Scripts.checkcache(0)
