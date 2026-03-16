@@ -58,9 +58,53 @@ def part1():
     global wisdom
     global speed
     Scripts.screenclear()
-    Scripts.sprint("Chapter Two is now in development.")
-    Scripts.sprint("Check back later once it's actually complete and released!")
-    answer = str(input("Please close the game"))
+    sprint("*After walking for about an hour, you and Gen arrive at the Serpentine Forest.")
+    sprint("*The atmosphere around the forest is eerie, to say the least.")
+    sprint("Gen: Say, " + name + ", what business do you have in the Serpentine Forest, anyway?")
+    sprint("*You knew this question would arise at some point in time, and yet you still didn't prepare an answer.")
+    activeinput = 1
+    while activeinput == 1:
+        print("1) Tell the truth about The Core")
+        print("2) Lie and say something about birds")
+        print("3) Stay silent")
+        answer = str(input("Make your choice "))
+        if answer == str("1"):
+            print("")
+            print("----------")
+            sprint("*It's better to be honest, rather than lie.")
+            sprint(name + ": I'm here to cure the Core Of Roses and heal the forest.")
+            sprint("*Gen looks shocked, more than ever before.")
+            sprint("Gen: Wow, you never cease to surprise, huh?")
+            sprint("Gen: Such a noble cause, how wonderful!")
+            sprint("*Looks like that went well.")
+            activeinput = 0
+            pass
+        elif answer == str("2"):
+            print("")
+            print("----------")
+            sprint(name + ": I heard there were some neat birds here, wanted to see for myself.")
+            sprint("*Gen looks confused.")
+            sprint("Gen: You're going to brave the forest and its horrors... for birds?")
+            sprint(name + ": Yeah?")
+            sprit("*Gen goes silent, then breaks out in laughter.")
+            sprint("Gen: Wow, you really are a wild card aren't you?")
+            sprint("Gen: Alright then, " + name + ", let's find your birds!")
+            sprint("*Somehow, they bought it.")
+            activeinput = 0
+            pass
+        elif answer == str("3"):
+            print("")
+            print("----------")
+            sprint("*You keep your mouth shut, focused on the path ahead.")
+            sprint("Gen: Hey wait, I didn't mean to upset you, " + name + ".")
+            sprint("Gen: I'll avoid asking again, sorry.")
+            sprint("*You feel like a bit of a jerk, but it's still best they don't know all of the nonsense with Wayland.")
+            actieinput = 0
+            pass
+        else:
+            sprint("Invalid input, try again.")
+            pass
+        pass
     pass
 Scripts.screenclear() #the initial game logic that runs at the start
 toload = Scripts.checkcache(0)
@@ -72,22 +116,6 @@ if toload ==str("y"):
         if varlist[1] == str("1"):
             varinit()
             part1()
-            pass
-        elif varlist[1] == str("2"):
-            varinit() #Initializes all needed variables
-            part2()
-            pass
-        elif varlist[1] == str("3"):
-            varinit()
-            part3()
-            pass
-        elif varlist[1] == str("4"):
-            varinit()
-            part4()
-            pass
-        elif varlist[1] == str("5"):
-            varinit()
-            part5()
             pass
 elif toload == str("n"):
     part1()
