@@ -553,7 +553,7 @@ def part4():
                     sprint("*You see Gen freeze up a little.")
                     sprint("Gen: It's... a long story...")
                     sprint("*It seems Gen won't answer readily.")
-                    sprint("*Best not to push it.")
+                    sprint("*Best not to push it. Not your business anyway.")
                     activeinput2 = 0
                     pass
                 elif answer2 == str("2"):
