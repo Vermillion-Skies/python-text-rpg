@@ -19,8 +19,14 @@ def varinit(): #Initializes all variables to make sure they exist
         Scripts.errorhandle("C10")
     pass
 def makesave(x): #Function to prep for saving, as well as advancing to the next chapter
-    part = str(x)
-    chapter = 1
+    if x == 6:
+        part = str(1)
+        chapter = str("2")
+        pass
+    else:
+        part = str(x)
+        chapter = str("1")
+        pass
     print("")
     answer = str(input("Would you like to save the game? (y/n) ")) #Asks user to confirm the save
     if answer == str("y"):
@@ -29,23 +35,28 @@ def makesave(x): #Function to prep for saving, as well as advancing to the next 
         pass
     else:
         pass
-    if part ==str("1"):
-        part1()
+    if chapter == str("1"):
+        if part == str("1"):
+            part1()
+            pass
+        elif part == str("2"):
+            part2()
+            pass
+        elif part == str("3"):
+            part3()
+            pass
+        elif part == str("4"):
+            part4()
+            pass
+        elif part == str("5"):
+            part5()
+            pass
+        else:
+            Scripts.errorhandle("C11")
+            pass
         pass
-    elif part == str("2"):
-        part2()
-        pass
-    elif part == str("3"):
-        part3()
-        pass
-    elif part == str("4"):
-        part4()
-        pass
-    elif part == str("5"):
-        part5()
-        pass
-    else:
-        Scripts.errorhandle("C11")
+    elif chapter == str("2"):
+        Scripts.loadchapter(str("2"))
     pass
 def part1(): #Function for the beginning character creation part of the game (referred to as part 1)
     global chapter #sets many variables to be global, rather than locked to this function
