@@ -496,6 +496,7 @@ def part4():
         sprint(name + ": ...been better.")
         sprint("Gen: Fair, but at least we're alive...")
         sprint("*Gen sighs, sitting down across from you.")
+        sprint("Gen: Sorry about that... mess")
     elif c1p4v2 == str("3"): # You ran
         sprint("*You slam your body into the door, opening it with a violent thud before closing it even more violently.")
         sprint("*You collapse against the door, panting rapidly.")
@@ -508,6 +509,7 @@ def part4():
         sprint("*You both sit down at the table in the center of the room")
         pass
     #Probably a good idea to smooth transfer into the table scene here
+    #Start it with dialog choices "What was that", something asking about Gen's home, and then a check for c1p4v1 where they explain what happened to this town
     pass
 Scripts.screenclear() #the initial game logic that runs at the start
 toload = Scripts.checkcache(0)
