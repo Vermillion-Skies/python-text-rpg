@@ -8,7 +8,9 @@ Story>
 
     Prologue: Complete
 
-    Chapter One: WIP (Currently developing part 4)
+    Chapter One: Complete
+
+    Chapter Two: In development
 
 Functions>
 
@@ -25,6 +27,10 @@ Functions>
     writecache: Complete
 
     sprint: Complete
+
+    gameover: complete
+
+    loadchapter: complete
 
 Documentation>
 
