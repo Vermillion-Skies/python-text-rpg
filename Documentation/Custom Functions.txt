@@ -37,3 +37,7 @@ Function used to display text in the terminal one character at a time, as oppose
 ----------------------------
 gameover()
 Function to have a unified game over dialog throughout the game. Calls sprint and prints a few lines of text before calling an unbreakable loop forcing restart.
+----------------------------
+----------------------------
+loadchapter(x)
+Function to load a chapter defined by the caller. A simple nested conditional to check input and then load a chapter based on said input
