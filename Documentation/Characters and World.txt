@@ -22,3 +22,10 @@ Gen (Chapter 1, part 3) [they/them]
 Pean (Chapter 1, Part ?)
     CHaracter to be made. Last name is Utbutr, like Peanut Butter, the joke is not mine.
 ----------------------------
+----------------------------
+Monsters
+----------------------------
+Crawlers
+    Highly venemous spiders with 10 legs. Can come in various sizes, with venom potency scaling lower with small Crawlers, and higher with large Crawlers.
+----------------------------
+
