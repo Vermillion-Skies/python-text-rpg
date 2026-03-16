@@ -395,7 +395,7 @@ def part4():
             c1p4v1 = str("y")
             activeinput = 0
             pass
-        if answer == str("2"):
+        elif answer == str("2"):
             print("")
             print("----------")
             Scripts.sprint("*You get impatient walking around this ghost town.")
@@ -532,6 +532,8 @@ def part4():
         print("4) Allow the silence to stay")
         answer = str(input("Make your choice "))
         if answer == str("1"):
+            print("")
+            print("----------")    
             Scripts.sprint(name + ": So just what the hell was that thing?")
             Scripts.sprint("Gen: Oh, that was a crawler.")
             Scripts.sprint(name + ": Crawler...?")
@@ -541,6 +543,8 @@ def part4():
             Scripts.sprint("*You count yourself lucky to be alive.")
             pass
         elif answer == str("2"):
+            print("")
+            print("----------")
             Scripts.sprint("*You look around Gen's house.")
             Scripts.sprint("*It's fairly basic. Small kitchen, a singular window, and...")
             Scripts.sprint("*Two beds...?")
@@ -551,6 +555,8 @@ def part4():
                 print("2) Leave it be")
                 answer2 = str(input("Make your choice "))
                 if answer2 == str("1"):
+                    print("")
+                    print("----------")
                     Scripts.sprint(name + ": Hey, Gen?")
                     Scripts.sprint("*Gen turns to face you.")
                     Scripts.sprint(name + ": The beds... You used to live here with someone else, didn't you?")
@@ -561,6 +567,8 @@ def part4():
                     activeinput2 = 0
                     pass
                 elif answer2 == str("2"):
+                    print("")
+                    print("----------")
                     Scripts.sprint("*You decide to leave it be, probably a touchy subject")
                     activeinput2 = 0
                     pass
@@ -571,6 +579,8 @@ def part4():
             pass
         elif answer == str("3"):
             if c1p4v1 == str("y"):
+                print("")
+                print("----------")
                 Scripts.sprint(name + ": So Gen... What the hell happened in this town?")
                 Scripts.sprint("Gen: I figured you'd ask at some point.")
                 Scripts.sprint("*Gen reaches down and grabs two drinks, tossing you one.")
@@ -604,6 +614,8 @@ def part4():
                 pass
             pass
         elif answer == str("4"):
+            print("")
+            print("----------")
             Scripts.sprint("*You decide to just let the silence remain, until Gen breaks it.")
             activeinput = 0
             pass
