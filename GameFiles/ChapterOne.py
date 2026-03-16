@@ -41,6 +41,9 @@ def makesave(x): #Function to prep for saving, as well as advancing to the next 
     elif part == str("4"):
         part4()
         pass
+    elif part == str("5"):
+        part5()
+        pass
     else:
         Scripts.errorhandle("C11")
     pass
@@ -516,6 +519,7 @@ def part4():
     if c1p4v1 == str("y"):
         sprint("*You remember that they offered to talk about the story behind this place.")
         pass
+    c1p4v3 = str("n")
     #Probably a good idea to smooth transfer into the table scene here
     #Start it with dialog choices "What was that", something asking about Gen's home, and then a check for c1p4v1 where they explain what happened to this town
     activeinput = 1
@@ -593,18 +597,47 @@ def part4():
                 sprint("*Somehow, Gen smiles once more.")
                 sprint("Gen: It's quite alright, " + name + ". You couldn't have known, could you?")
                 sprint("*Gen takes a sip of their drink, returning the room to silence.")
+                c1p4v3 = str("y")
                 pass
             else:
                 sprint("Invalid input, try again.")
                 pass
             pass
         elif answer == str("4"):
+            sprint("*You decide to just let the silence remain, until Gen breaks it.")
+            activeinput = 0
             pass
         else:
             sprint("Invalid input, try again.")
             pass
         pass
+    sprint("Gen: Well, it's getting late. What say we get some rest, huh " + name + "?")
+    sprint("*You can't help but agree. Your body is exhausted.")
+    sprint(name + ": ...yeah.")
+    sprint("*Gen directs you to a second bed, not far from theirs.")
+    if c1p4v3 == str("y"):
+        sprint("*You get the feeling this belonged to their wife, Matilda.")
+        pass
+    elif c1p4v3 == str("n"):
+        sprint("*You wonder why they have two beds, but it's probably too late to ask that now.")
+        pass
+    sprint("*As you lay down, your eyes feel heavy almost immediately...")
+    sprint("*You slowly drift off into a gentle slumber...")
+    makesave(5)
     pass
+def part5():
+    global chapter #sets many variables to be global, rather than locked to this function
+    global part
+    global name 
+    global health
+    global maxhealth
+    global money
+    global strength
+    global defense
+    global wisdom
+    global speed
+    Scripts.screenclear()
+    sprint("Part five is still under development. Come back later!")
 Scripts.screenclear() #the initial game logic that runs at the start
 toload = Scripts.checkcache(0)
 if toload ==str("y"):
@@ -623,6 +656,10 @@ if toload ==str("y"):
         elif varlist[1] == str("4"):
             varinit()
             part4()
+            pass
+        elif varlist[1] == str("5"):
+            varinit()
+            part5()
             pass
 elif toload == str("n"):
     part1()
