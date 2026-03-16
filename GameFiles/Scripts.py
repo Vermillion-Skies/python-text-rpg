@@ -145,7 +145,11 @@ def linebreak(): #Literally just a linebreak for choice loops
     print("")
     print("----------")
     pass
-def gendercheck(x, y, z, a): # Checks gender and returns the appropriate term for what's requested
+def gendercheck(gender, refcode, capcode, name): # Checks gender and returns the appropriate term for what's requested
+    x = int(gender)
+    y = int(refcode)
+    z = int(capcode)
+    a = str(name)
     if x == 0: #Checks for non-binary gender
         if y == 0: #returns "person"
             if z == 0: #lowercase

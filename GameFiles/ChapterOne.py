@@ -130,7 +130,8 @@ def part1(): #Function for the beginning character creation part of the game (re
             Scripts.sprint("Invalid input, try again.")
             pass
         pass
-    Scripts.sprint("The Voice: So, a " + Scripts.gendercheck(gender, 0, 0, name) + " named " + name + ".")
+    Scripts.sprint("The Voice: So, a " + str(Scripts.gendercheck(gender, 0, 0, name)) + " named " + name + ".")
+    Scripts.sprint("The Voice: A new name upon this plane.")
     Scripts.sprint("The Voice: Although, I could swear I've heard it before...")
     Scripts.sprint("The Voice: Ah, an unimportant detail.")
     Scripts.sprint("The Voice: We shall now see how exactly the world wishes to build your form...")
